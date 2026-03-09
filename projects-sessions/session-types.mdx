@@ -1,0 +1,44 @@
+---
+title: "Session Types"
+description: "Understand the four session types and how to create and manage sessions."
+---
+
+A Session is a single AI planning conversation within a project. When you create a session, you select a **type** — this tells Brunel's AI what kind of work you're planning, helping it ask better questions and structure the output more usefully.
+
+---
+
+## Creating a New Session
+
+1. Select a project from the sidebar
+2. Click **+ New Session**
+3. Enter a **session name** (tip: name it after the ticket or task — e.g. `PROJ-123: Add rate limiting`)
+4. Select a **session type**
+5. Click **Create** — you'll be taken directly into the session
+
+---
+
+## Session Types
+
+| Type | Best for |
+|------|----------|
+| **Feature Planning** | Planning new features, enhancements, or product additions. Use this when you're defining requirements, dependencies, and implementation approach for something new. |
+| **Bug Fix** | Debugging and resolving issues. Use this when you need to diagnose a problem, identify root cause, and plan a targeted fix. |
+| **Refactoring** | Code improvement and restructuring. Use this when the goal is improving the codebase without changing external behavior — performance, readability, architecture cleanup. |
+| **General Planning** | Any planning conversation that doesn't fit the above. Use this for spikes, research tasks, migrations, or anything exploratory. |
+
+<Tip>
+**Not sure which to pick?** General Planning is always a safe default. The session type helps orient the AI, but you can describe your work clearly in your first message and the AI will adapt regardless.
+</Tip>
+
+---
+
+## The Multi-Session Interface
+
+Brunel supports multiple open sessions simultaneously, displayed as **tabs** at the top of the workspace.
+
+- **Switch instantly** between sessions by clicking their tab
+- **Unread badges** appear on tabs when a session has new activity while you're in another session
+- **Close a session tab** by clicking the × on the tab — this closes the view only. The session and all its history remain exactly where you left them; reopen it from the sidebar to continue where you left off
+- **Rename a session** at any time by right-clicking its tab or using the session context menu
+
+All open sessions and their full message history persist across app restarts — you'll pick up exactly where you left off.

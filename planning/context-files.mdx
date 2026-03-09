@@ -1,0 +1,71 @@
+---
+title: "Context Files"
+description: "Attach files to your sessions to give Brunel's AI the background knowledge it needs to plan accurately."
+---
+
+Context Files are files attached to a session that give Brunel's AI the background knowledge it needs to plan accurately. They are the single biggest lever for improving plan quality and, by extension, the accuracy of your coding agent's output.
+
+---
+
+## Why Context Files Matter
+
+Without context, the AI plans in a vacuum — it makes assumptions about your architecture, naming conventions, and existing services that may be completely wrong for your codebase. With the right context files attached, it plans with the same background knowledge a senior developer would have.
+
+A plan built with context files will:
+- Reference existing services and patterns correctly instead of suggesting new ones
+- Respect your team's coding conventions and style
+- Identify real dependencies rather than theoretical ones
+- Produce an export that a coding agent can execute accurately on the first attempt
+
+---
+
+## Attaching Files to a Session
+
+1. Open a session and click the **File** panel icon (usually in the right sidebar or bottom toolbar)
+2. Click **Upload** or drag and drop files into the panel
+3. Files are uploaded to the cloud and attached to this session immediately
+4. The AI will have access to all attached files in subsequent messages
+
+You can also attach files directly in the chat input using the attachment button — both methods add files to the same session Context Files.
+
+---
+
+## Browsing and Previewing Files
+
+The file panel shows all context files attached to the session. Click any file to preview it inline. Brunel supports inline viewing for:
+
+- **Plain text and Markdown** — rendered directly in the panel
+- **Code files** — syntax-highlighted preview
+- **Word documents** (`.docx`) — inline document viewer
+- **Spreadsheets** (`.xlsx`) — inline spreadsheet viewer
+
+---
+
+## Removing Files
+
+To remove a context file from a session, open the file panel, hover over the file, and click the **remove** icon. Removing a file detaches it from the session — it will no longer be included in the AI's context for future messages.
+
+---
+
+## What Makes a Good Context File
+
+The best context files are focused, accurate, and directly relevant to the task at hand.
+
+| File type | What to include |
+|-----------|----------------|
+| **Architecture overview** | Service boundaries, how components interact, data flow |
+| **Coding conventions** | Naming patterns, file structure, patterns your team follows |
+| **API contracts** | Interface definitions, endpoint signatures, data schemas |
+| **Existing service docs** | What services exist, what they do, how to call them |
+| **Business requirements** | Acceptance criteria, constraints, non-functional requirements |
+| **Prior decisions** | Architecture decisions that the agent must respect |
+
+<Tip>
+You don't need to attach your entire codebase. Focus on the files most relevant to the current task. A tight, relevant set of context files produces better plans than a large, noisy set.
+</Tip>
+
+---
+
+## File Storage
+
+Context files are stored securely in the cloud and associated with the session they were uploaded to. They persist as long as the session exists. If you archive a session, you'll have the option to remove associated files to free up storage.

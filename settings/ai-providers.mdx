@@ -1,0 +1,49 @@
+---
+title: "AI Providers"
+description: "Configure Anthropic and AWS Bedrock as AI providers for your organization."
+---
+
+Brunel supports multiple AI providers for powering planning sessions. Providers are configured at the **organization level**, which makes them available for use on a per-project basis — the org controls what's available, and individual projects can be configured to use whichever provider is appropriate.
+
+---
+
+## Configuring a Provider
+
+1. Go to **Settings → AI Providers** in your organization settings
+2. Select the provider you want to configure
+3. Enter the required credentials (see below)
+4. Save — the provider will now be available when configuring individual projects
+
+---
+
+## Supported Providers
+
+### Anthropic (Claude)
+
+The default provider for most teams. Uses the Anthropic API directly.
+
+| Field | Description |
+|-------|-------------|
+| **API Key** | Your Anthropic API key — starts with `sk-ant-`. Get one at [console.anthropic.com](https://console.anthropic.com) |
+
+### AWS Bedrock
+
+For teams running on AWS infrastructure who prefer to use Bedrock's managed Claude models.
+
+| Field | Description |
+|-------|-------------|
+| **Region** | The AWS region where your Bedrock models are enabled (e.g., `us-east-1`) |
+
+<Note>
+**Which provider should I use?** Most teams start with Anthropic. Use Bedrock if your organization requires all AI traffic to stay within your AWS environment, or if you have existing AWS cost management and compliance requirements.
+</Note>
+
+---
+
+## Assigning a Provider to a Project
+
+Once a provider is configured at the org level, you can assign it to specific projects:
+
+1. Open the project settings
+2. Under **AI Provider**, select from the providers your org has configured
+3. Save — all new sessions in that project will use the selected provider

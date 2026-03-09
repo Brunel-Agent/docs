@@ -1,0 +1,52 @@
+---
+title: "Roles & Permissions"
+description: "Role-based access control for organizations — Owner, Admin, Member, and Viewer."
+---
+
+Brunel uses role-based access control (RBAC) to give you precise control over what each team member can do. Roles are assigned per organization and apply to everything within it.
+
+---
+
+## The Four Roles
+
+| Role | Description |
+|------|-------------|
+| **Owner** | Full access to everything, including billing and subscription management. Typically the person who created the organization. |
+| **Admin** | Full access to all features and settings, excluding billing. Can manage members, projects, and organization settings. |
+| **Member** | Can create and work in sessions, upload context files, and use all planning features. Cannot manage members or manage projects at the organization level. |
+| **Viewer** | Read-only access. Can view all projects, sessions, and messages but cannot create, edit, or interact with any content. |
+
+---
+
+## Permissions at a Glance
+
+| Action | Owner | Admin | Member | Viewer |
+|--------|-------|-------|--------|--------|
+| View projects and sessions | ✅ | ✅ | ✅ | ✅ |
+| Create and edit sessions | ✅ | ✅ | ✅ | ❌ |
+| Upload context files | ✅ | ✅ | ✅ | ❌ |
+| Change session phases | ✅ | ✅ | ✅ | ❌ |
+| Create and edit projects | ✅ | ✅ | ❌ | ❌ |
+| Invite and manage members | ✅ | ✅ | ❌ | ❌ |
+| Manage organization settings | ✅ | ✅ | ❌ | ❌ |
+| Manage billing | ✅ | ❌ | ❌ | ❌ |
+
+---
+
+## Choosing the Right Role
+
+- **Owner** — assign to the technical lead or whoever owns the Brunel subscription
+- **Admin** — assign to engineering managers or team leads who need to manage members and projects
+- **Member** — the default for most developers. Full planning capabilities without org-level admin access
+- **Viewer** — ideal for stakeholders, product managers, or executives who need visibility into planning work without being able to modify anything
+
+---
+
+## Changing a Member's Role
+
+Only Owners and Admins can change roles.
+
+1. Go to **Settings → Members**
+2. Find the member whose role you want to change
+3. Click the role dropdown next to their name
+4. Select the new role — the change takes effect immediately

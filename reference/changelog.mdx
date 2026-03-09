@@ -1,0 +1,20 @@
+---
+title: "Changelog"
+description: "Product updates and release notes for Brunel Agent."
+mode: "wide"
+---
+
+<Update label="v0.9.0" description="March 2026" tags={["Release"]}>
+
+#### What's New
+
+- **MCP Integration** — Local MCP server connects Brunel Agent directly to Cursor, Claude Code, and VS Code. Configure port, allowed projects, and API key authentication in Settings → MCP Server.
+- **AWS Bedrock support** — In addition to Anthropic, organizations can now configure AWS Bedrock as an AI provider. Set the provider at the org level and assign it per project.
+- **Inline file viewers** — Context files now include inline previews for `.docx` and `.xlsx` files. No need to download and open attachments separately.
+- **Session lifecycle phases** — Sessions now move through four explicit phases: Backlog → Planning → Execution → Verification. Phase status is visible on the Dashboard and updates in real time for all team members.
+- **RBAC** — Role-based access control with four roles: Owner, Admin, Member, and Viewer.
+- **Real-time Dashboard** — Team-wide view of all sessions grouped by lifecycle phase, updating live across all members.
+- **Multi-tab session interface** — Open and switch between multiple sessions simultaneously with tab-based navigation and unread badges.
+- **Auto-update** — The app checks for and installs updates automatically on launch.
+
+</Update>

@@ -1,0 +1,77 @@
+---
+title: "Session Lifecycle"
+description: "How sessions move through Backlog, Planning, Execution, and Verification phases."
+---
+
+Every session in Brunel moves through a lifecycle of four phases. These phases map directly to the Plan → Export → Execute → Verify workflow, giving your team a shared view of where every task stands.
+
+---
+
+## The Four Phases
+
+```
+Backlog → Planning → Execution → Verification
+```
+
+**Backlog**
+The session has been created but active planning hasn't started yet. Use Backlog as a queue for upcoming work — create sessions in advance to capture the task name and type, then move them to Planning when you're ready to start.
+
+**Planning**
+You're actively working with the AI to build a structured plan. This is where the bulk of the Brunel workflow happens — defining requirements, surfacing constraints, identifying dependencies, and building the plan that will be handed to your coding agent.
+
+**Execution**
+The plan has been exported and your coding agent is executing it. The session moves to Execution once your developer has handed the plan off to Cursor, Claude Code, or another agent and work is underway.
+
+**Verification**
+The coding agent has completed its work. In Verification, you return to Brunel and check the agent's output against the original plan intent — surfacing gaps, missed requirements, or deviations before the work goes to code review.
+
+---
+
+## Changing a Session's Phase
+
+All phase transitions are manual — your team controls when a session moves forward.
+
+1. Open the session
+2. Click the **status indicator** at the top of the session (shows the current phase)
+3. Select the new phase from the dropdown
+4. Confirm if prompted
+
+You can move a session to any phase at any time — forward or backward. If a verification reveals significant gaps, for example, you can move it back to Planning to revise the plan.
+
+---
+
+## The Dashboard
+
+The Dashboard gives your entire team a real-time bird's-eye view of all sessions across a project, grouped by phase. Changes — status updates, new sessions, new messages — are reflected immediately for every member of the organization.
+
+- Sessions are displayed **active-first** — Planning and Execution phases are surfaced at the top
+- Each session card shows its name, type, phase, and last activity
+- Click any session card to open it
+
+---
+
+## Session Persistence and History
+
+Every message in every session is stored in the cloud and persists indefinitely. When you reopen a session — even after weeks — the full conversation history is there exactly as you left it.
+
+This persistence is what makes sessions **team artifacts** rather than disposable chats. A senior developer can build a plan in a session, and any teammate can open it later to understand the reasoning, context, and decisions behind the work.
+
+---
+
+## Archiving Sessions
+
+When a session's work is fully complete, you can archive it to keep the project view clean.
+
+1. Right-click the session in the sidebar or use the session context menu
+2. Select **Archive Session**
+3. Optionally choose to remove associated files to free up storage
+4. Confirm — the session will be removed from the active view but remains accessible in your session history
+
+---
+
+## Best Practices
+
+- **One session per task or ticket** — keeping sessions focused makes plans cleaner and exports more useful for coding agents
+- **Name sessions after the ticket** — e.g. `PROJ-123: Add rate limiting middleware`. This makes the Dashboard easy to scan and links the Brunel session to your PM tool
+- **Move phases as you go** — keeping phase status current gives your engineering manager real-time visibility without any extra reporting
+- **Don't skip Verification** — it's the step most teams skip, and the one that catches the most problems before code review

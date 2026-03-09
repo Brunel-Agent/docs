@@ -1,0 +1,50 @@
+---
+title: "FAQ"
+description: "Frequently asked questions about Brunel Agent."
+---
+
+<AccordionGroup>
+  <Accordion title="What is Brunel Agent?">
+    Brunel Agent is a desktop application for development teams to plan work with AI, brief their coding agents, and verify the results. It sits at the start and end of your AI development workflow — planning before execution, and verification after. It does not generate code itself.
+  </Accordion>
+
+  <Accordion title="Does Brunel Agent write code?">
+    No. Brunel Agent is intentionally focused on planning and verification, not code generation. It produces structured plans that you export to a coding agent (Cursor, Claude Code, GitHub Copilot, or any other tool). This separation keeps your planning clean, auditable, and agent-agnostic.
+  </Accordion>
+
+  <Accordion title="Which coding agents does Brunel work with?">
+    Brunel is agent-agnostic. Any AI coding agent that supports MCP (Model Context Protocol) can connect directly to Brunel's local MCP server. For agents that don't support MCP, you can copy or export the plan manually. The app is specifically designed around Cursor, Claude Code, and GitHub Copilot, but is not limited to these.
+  </Accordion>
+
+  <Accordion title="Does Brunel Agent work offline?">
+    Brunel Agent requires an internet connection for AI planning sessions (which call the Anthropic or AWS Bedrock API) and for real-time team sync. The app will launch offline, but AI features and team collaboration will be unavailable until connectivity is restored.
+  </Accordion>
+
+  <Accordion title="Is my data secure?">
+    All data — sessions, messages, context files, and plans — is stored in the cloud using AWS infrastructure with encryption at rest and in transit. The MCP server runs on `localhost` only and is never exposed to the internet. Context files you upload are associated with your session and accessible only to members of your organization.
+  </Accordion>
+
+  <Accordion title="Can I belong to multiple organizations?">
+    Yes. Your Brunel account can be a member of multiple organizations. When you log in, you'll see the organization selection screen — choose the organization you want to work in. To switch organizations, log out and select a different one on your next login.
+  </Accordion>
+
+  <Accordion title="What happens when I reach my credit limit?">
+    AI planning features will be paused until the next billing cycle resets your credit balance. You can upgrade to a higher plan at any time from **Settings → Billing** to get more credits immediately.
+  </Accordion>
+
+  <Accordion title="Can I try Brunel Agent before subscribing?">
+    Yes. New organizations start with a **200-credit trial** — enough to run several planning sessions and explore the full workflow. No credit card is required to start a trial. You can subscribe to a paid plan at any time from **Settings → Billing**.
+  </Accordion>
+
+  <Accordion title="What file types can I attach as context files?">
+    Brunel supports plain text, Markdown, code files (any extension), `.docx` Word documents, and `.xlsx` Excel spreadsheets. Docx and xlsx files have inline viewers so you can preview them without leaving the app.
+  </Accordion>
+
+  <Accordion title="Can I use Brunel Agent on Linux?">
+    Not currently. Brunel Agent is available for macOS (Apple Silicon and Intel) and Windows. Linux support is not available at this time.
+  </Accordion>
+
+  <Accordion title="What is the difference between archiving and deleting a session?">
+    Brunel uses soft-delete — archiving removes a session from your active view but preserves all history. You can recover an archived session at any time. There is no permanent delete for sessions.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,142 @@
+---
+title: "MCP Integration"
+description: "Connect Cursor, Claude Code, or VS Code directly to Brunel Agent via the local MCP server."
+---
+
+MCP (Model Context Protocol) is an open standard that lets AI coding agents connect to external tools and data sources. Brunel runs a **local MCP server** that your coding agent can connect to — giving it direct access to your plans, context files, and session data without you having to copy and paste anything.
+
+Once connected, your coding agent can read the full plan from your Brunel session and execute it with complete context automatically.
+
+---
+
+## Enabling the MCP Server
+
+1. In Brunel Agent, go to **Settings → MCP Server**
+2. Toggle **Enable MCP Server** on
+3. Before you can start the server, you need to generate an API key — see below
+
+---
+
+## Generating an API Key
+
+The MCP server requires an API key for authentication. This ensures only authorized agents can access your planning data.
+
+1. In **Settings → MCP Server**, click **Generate API Key**
+2. Copy the generated key — you'll need it when configuring your coding agent
+3. Store it securely. If you need to regenerate it, any agents using the old key will need to be reconfigured
+
+---
+
+## Server Configuration
+
+| Setting | Default | Notes |
+|---------|---------|-------|
+| **Port** | `17321` | Configurable. Range: 1024–65535. Restart server after changing. |
+| **Allowed Projects** | None selected | Toggle **All Projects** to grant access to everything, or select specific projects from the list. |
+| **Auto-start on launch** | Off | Automatically start the MCP server when Brunel Agent opens |
+
+<Note>
+The MCP server runs on `localhost` only — it is not exposed to the internet.
+</Note>
+
+Once configured, click **Start Server**. The status indicator in the top right will change from **Stopped** to **Running**.
+
+---
+
+## Connecting Cursor
+
+1. Open Cursor and go to **Settings → MCP**
+2. Click **Add MCP Server**
+3. Add the following configuration, replacing `YOUR_API_KEY` with the key you generated in Brunel:
+
+```json
+{
+  "mcpServers": {
+    "brunel-agent": {
+      "url": "http://localhost:17321/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+      }
+    }
+  }
+}
+```
+
+4. Save the configuration — Cursor will connect to Brunel automatically
+
+<Tip>
+In Brunel Settings, you can copy a pre-filled configuration snippet directly — click **Copy Config Snippet** and paste it into Cursor's MCP settings.
+</Tip>
+
+---
+
+## Connecting Claude Code
+
+1. Open your Claude Code configuration file (`~/.claude/mcp_servers.json`)
+2. Add the following entry, replacing `YOUR_API_KEY` with the key you generated:
+
+```json
+{
+  "brunel-agent": {
+    "url": "http://localhost:17321/mcp",
+    "headers": {
+      "Authorization": "Bearer YOUR_API_KEY"
+    }
+  }
+}
+```
+
+3. Restart Claude Code — it will detect the Brunel MCP server automatically
+
+---
+
+## Connecting VS Code (GitHub Copilot)
+
+1. Open VS Code and go to **Settings → search for "MCP"**
+2. In your `settings.json`, add:
+
+```json
+{
+  "mcp.servers": {
+    "brunel-agent": {
+      "url": "http://localhost:17321/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+      }
+    }
+  }
+}
+```
+
+3. Reload VS Code — Copilot will have access to Brunel planning data
+
+---
+
+## What the Agent Can Access
+
+Once connected, your coding agent can read:
+
+- **Plans** — the full structured plan from any session in your Allowed Projects
+- **Context files** — all files attached to a session
+- **Session metadata** — session name, type, and current lifecycle phase
+
+The agent cannot modify sessions, messages, or files — the MCP connection is read-only.
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Server shows 'Stopped' after clicking Start Server">
+    Make sure you have generated an API key first. The server will not start without one.
+  </Accordion>
+  <Accordion title="Port conflict error">
+    Another application is using port 17321. Change the port in Settings to any available port in the range 1024–65535 and restart the server. Update the port in your agent's MCP configuration to match.
+  </Accordion>
+  <Accordion title="Agent cannot connect">
+    Verify the MCP server is running (status shows "Running" in Settings). Check that the port and API key in your agent's configuration match exactly what's in Brunel Settings. Make sure Brunel Agent is open and running.
+  </Accordion>
+  <Accordion title="Agent returns no data">
+    Check that the project you're working in is accessible via the MCP Server settings. Either toggle **All Projects** on, or make sure the specific project is checked in the Allowed Projects list.
+  </Accordion>
+</AccordionGroup>

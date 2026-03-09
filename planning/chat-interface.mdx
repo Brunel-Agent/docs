@@ -1,0 +1,76 @@
+---
+title: "Chat Interface"
+description: "How to use Brunel's chat interface to build high-quality plans with AI."
+---
+
+The chat interface is where you collaborate with Brunel's AI to build structured plans. It's designed to feel familiar — a message thread with persistent history — but purpose-built for planning work rather than general conversation.
+
+---
+
+## The Interface
+
+The workspace is organized into three areas:
+
+- **Sidebar** — your projects and sessions. Click any session to open it as a tab
+- **Session tabs** — multiple sessions open simultaneously at the top of the workspace. Switch between them instantly
+- **Chat area** — the active session's message thread, input box, and file panel
+
+---
+
+## Writing a Good First Message
+
+The quality of your plan depends heavily on your first message. The more context you give upfront, the less back-and-forth is needed and the more useful the exported plan will be for your coding agent.
+
+A strong first message includes:
+
+- **What you're building or fixing** — a clear description of the task
+- **Relevant constraints** — existing services, patterns, or libraries that must be used
+- **What to avoid** — approaches that won't work for your codebase or team
+- **Acceptance criteria** — how you'll know the work is done
+
+<CodeGroup>
+```text Weak first message
+Add rate limiting to our API
+```
+
+```text Strong first message
+Add rate limiting to our API endpoints. We have an existing
+RateLimiterService backed by Redis that must be used — don't
+create a new one. Free tier users are limited to 100 req/hour,
+paid users to 1000/hour. Limits need to be configurable per
+endpoint. Must integrate with our existing UserAuthMiddleware
+to check tier. Acceptance: tests for both tiers pass, config
+is per-endpoint.
+```
+</CodeGroup>
+
+---
+
+## Quick Reply Buttons
+
+As the conversation progresses, Brunel surfaces **Quick Reply** buttons — pre-built prompts that help you move the planning conversation forward without typing. These might include options like "Add more detail on dependencies", "Show acceptance criteria", or "I'm ready to export this plan." Click any button to send that message instantly.
+
+---
+
+## Tool Call Indicators and Thinking Blocks
+
+When Brunel's AI is doing background work — reading context files, searching for patterns, or processing complex requirements — you'll see a **tool call indicator** showing what it's working on. This is normal and means the AI is gathering the information it needs before responding.
+
+For complex planning tasks, you may also see a **thinking block** — a collapsible section showing the AI's reasoning process before it delivers its response. You can expand this to understand how the AI arrived at its plan.
+
+---
+
+## Message Actions
+
+Every message in the chat supports:
+
+- **Copy** — click the copy icon on any message to copy its full content to your clipboard. Useful for pasting plan text directly into a coding agent
+- **Timestamps** — hover over any message to see its exact timestamp. Messages display relative time by default (e.g., "5m ago")
+
+---
+
+## Uploading Files in Chat
+
+You can attach files directly in the message input using the **attachment button** (paperclip icon). Files uploaded this way are added to the session's Context Files and immediately available to the AI in subsequent messages.
+
+For managing multiple context files, use the dedicated **Context Files panel** — see [Context Files](/planning/context-files).

@@ -1,0 +1,72 @@
+---
+title: "Introduction"
+description: "Brunel Agent is where development teams plan together, brief their AI coding agents, and verify the results — turning individual AI tools into a coordinated team workflow."
+---
+
+## The Problem
+
+AI coding agents are powerful, but they fail for a predictable reason: they start executing without enough context, and nobody checks their work when they're done. The result is rework, reverted commits, and teams that can't tell whether their AI investment is actually paying off.
+
+This isn't an agent quality problem — it's a planning and verification problem. When agents are given structured plans with clear requirements, constraints, and context, success rates improve dramatically. When their output is verified against the original intent, problems get caught before they reach code review.
+
+Brunel solves both sides of this problem.
+
+---
+
+## How Brunel Fits Into Your Workflow
+
+Brunel sits at the beginning and end of every agent task — not in the middle. Your developers keep using whatever coding agents they prefer.
+
+![The Brunel Agent workflow: four stages shown left to right — Plan (Brunel Agent), Export, Execute (Cursor / Claude Code / Copilot), Verify (Brunel Agent) — connected by arrows on a dark background.](/images/plan-export-execute-verify.png)
+
+**Plan** — Your team builds a structured plan together in Brunel: requirements, constraints, dependencies, and architectural context. This takes 5–10 minutes and becomes a shared team artifact, not a disposable chat.
+
+**Export** — The plan is packaged and handed off to your coding agent of choice. Brunel is agent-agnostic — it works with Cursor, Claude Code, GitHub Copilot, or any MCP-compatible tool.
+
+**Execute** — Your agent runs with full context. Because it has a structured plan, it makes fewer wrong assumptions and produces better output on the first attempt.
+
+**Verify** — When execution is complete, bring the results back to Brunel. The verification step checks the agent's output against the original plan intent, surfacing gaps before they become bugs.
+
+---
+
+## Why Team-First
+
+Most AI coding tools are built for individual developers. Conversations are siloed, plans are disposable, and engineering managers have no visibility into what agents are being asked to do or whether it worked.
+
+Brunel is built for teams. Every planning session is a shared workspace — visible to the team, persistent across time, and organized within a clear hierarchy of Organizations, Projects, and Sessions. Managers can see what's being planned. Senior developers can build plans once and reuse context. Teams can measure whether agent-assisted work is actually improving over time.
+
+---
+
+## What Brunel Does Not Do
+
+Brunel does not generate code. This is intentional. By staying out of the execution layer, Brunel remains genuinely complementary to every coding agent on the market. You don't have to change how your team codes — you just give your agents better plans and verify what they produce.
+
+---
+
+## Key Concepts
+
+A few terms you'll encounter throughout these docs:
+
+| Term | Description |
+|------|-------------|
+| **Organization** | Your company or team. The top-level container for everything in Brunel. |
+| **Project** | A codebase or initiative. Projects live inside an organization and contain sessions. |
+| **Session** | A single planning conversation with AI. Sessions have a lifecycle: Backlog → Planning → Execution → Verification. |
+| **Context Files** | Files you attach to a session to give the AI relevant architectural context, conventions, or requirements. |
+| **MCP Integration** | A local MCP server that lets coding agents like Cursor or Claude Code connect directly to Brunel sessions and read plans. |
+
+---
+
+## Next Steps
+
+<CardGroup cols={3}>
+  <Card title="Quickstart" icon="rocket" href="/get-started/quickstart">
+    Install Brunel and run your first session in under 5 minutes
+  </Card>
+  <Card title="Core Concepts" icon="book" href="/get-started/core-concepts">
+    Go deeper on how Organizations, Projects, and Sessions work
+  </Card>
+  <Card title="MCP Integration" icon="plug" href="/planning/mcp-integration">
+    Connect your coding agent directly to Brunel
+  </Card>
+</CardGroup>

@@ -1,0 +1,24 @@
+---
+title: "MCP Servers"
+description: "Quick reference for MCP server settings. For full setup, see MCP Integration."
+---
+
+This page is a reference summary of MCP server settings. For full setup instructions including connecting Cursor, Claude Code, and VS Code, see [MCP Integration](/planning/mcp-integration).
+
+---
+
+## Quick Reference
+
+The MCP server is configured in **Settings → MCP Server**.
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Enable MCP Server** | Off | Master toggle to enable or disable the local MCP server |
+| **Port** | `17321` | Port the server listens on. Restart required after changing. Range: 1024–65535. |
+| **Allowed Projects** | None selected | Toggle **All Projects** to grant access to everything, or select specific projects to scope agent access |
+| **Auto-start on launch** | Off | Automatically start the MCP server when Brunel Agent opens |
+| **API Key** | — | Generate a key to authenticate your coding agent's connection |
+
+<Note>
+The MCP server runs on `localhost` only and is never exposed to the internet.
+</Note>

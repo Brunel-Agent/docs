@@ -1,0 +1,84 @@
+---
+title: "Core Concepts"
+description: "Understand how Organizations, Projects, Sessions, and Context Files work together in Brunel Agent."
+---
+
+Brunel is organized around four levels: **Organizations**, **Projects**, **Sessions**, and **Context Files**. Understanding how these relate to each other will help you get the most out of the platform.
+
+---
+
+## Organizations
+
+An Organization is the top-level container in Brunel — it represents your company, team, or any group of people collaborating together. Everything in Brunel lives inside an organization: projects, sessions, members, billing, and settings.
+
+**Key things to know:**
+- When you sign up, you'll be prompted to create your first organization
+- A single Brunel account can belong to **multiple organizations** — useful if you work across multiple teams or clients. On every login, you'll see the organization selection screen and choose which one to enter
+- Organizations have their own member roster, roles, and billing subscription
+- If you've been invited to join an existing organization, accept the invitation from your email — you'll be placed directly into that org without needing to create one
+
+---
+
+## Projects
+
+A Project represents a codebase, product, or initiative. Projects live inside an organization and are the container for your planning sessions.
+
+**Key things to know:**
+- Create one project per codebase or distinct area of work — for example, `backend-api`, `mobile-app`, or `platform-infra`
+- All members of an organization can see all projects, subject to their role permissions
+- Projects can be edited (renamed, updated description) or archived. Archived projects are recoverable — they're hidden from the active view but nothing is deleted
+
+---
+
+## Sessions
+
+A Session is a single AI planning conversation within a project. Each session has a type, a name, a full message history, and a lifecycle phase.
+
+**Key things to know:**
+- Sessions are the core unit of work in Brunel — create one per task or ticket
+- All session history is persistent and cloud-synced. Closing the app, switching tabs, or switching team members does not lose any messages
+- Multiple sessions can be open simultaneously in the tab interface
+
+### Session Types
+
+| Type | Use when... |
+|------|-------------|
+| **Feature Planning** | Defining requirements for something new |
+| **Bug Fix** | Diagnosing an issue and planning a targeted fix |
+| **Refactoring** | Improving code without changing external behavior |
+| **General Planning** | Spikes, research, migrations, or anything exploratory |
+
+### Session Lifecycle
+
+Every session moves through four phases — all transitions are manual:
+
+```
+Backlog → Planning → Execution → Verification
+```
+
+| Phase | Meaning |
+|-------|---------|
+| **Backlog** | Created but not yet actively being planned |
+| **Planning** | Actively building the plan with AI |
+| **Execution** | Plan has been exported; coding agent is working |
+| **Verification** | Agent work is complete; verifying against the plan |
+
+---
+
+## Context Files
+
+Context Files are documents attached to a session that give Brunel's AI the background it needs to plan accurately for your specific codebase and team.
+
+**Key things to know:**
+- Supported formats: plain text, Markdown, code files, `.docx`, `.xlsx`
+- Files are stored in the cloud and associated with the session they were uploaded to
+- Docx and xlsx files have inline viewers — no need to download them to read them
+- The right context files dramatically improve plan quality — see [Context Files](/planning/context-files) for guidance on what to include
+
+---
+
+## MCP Integration
+
+Brunel runs a local MCP (Model Context Protocol) server that coding agents can connect to directly. Once connected, your agent can read plans, context files, and session metadata without any copy-pasting.
+
+See [MCP Integration](/planning/mcp-integration) for full setup instructions.
