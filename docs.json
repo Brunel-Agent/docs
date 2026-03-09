@@ -1,85 +1,97 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "Brunel Agent",
+  "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
-  },
-  "favicon": "/favicon.svg",
+  "name": "Brunel Agent",
   "colors": {
     "primary": "#1D6BF3",
     "light": "#4D90F7",
     "dark": "#1250C4"
   },
-  "topbarLinks": [
-    {
-      "name": "Download",
-      "url": "https://download.brunelagent.ai"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Get Started",
-    "url": "https://download.brunelagent.ai"
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
   },
-  "navigation": [
-    {
-      "group": "Get Started",
-      "pages": [
-        "get-started/quickstart",
-        "get-started/introduction",
-        "get-started/core-concepts"
-      ]
-    },
-    {
-      "group": "Installation",
-      "pages": [
-        "installation/download-install",
-        "installation/account-setup"
-      ]
-    },
-    {
-      "group": "Projects & Sessions",
-      "pages": [
-        "projects-sessions/creating-projects",
-        "projects-sessions/session-types",
-        "projects-sessions/session-lifecycle"
-      ]
-    },
-    {
-      "group": "Planning with AI",
-      "pages": [
-        "planning/chat-interface",
-        "planning/context-files",
-        "planning/mcp-integration"
-      ]
-    },
-    {
-      "group": "Team Features",
-      "pages": [
-        "team/shared-workspaces",
-        "team/invitations",
-        "team/roles-permissions"
-      ]
-    },
-    {
-      "group": "Settings",
-      "pages": [
-        "settings/ai-providers",
-        "settings/mcp-servers",
-        "settings/billing"
-      ]
-    },
-    {
-      "group": "Reference",
-      "pages": [
-        "reference/keyboard-shortcuts",
-        "reference/faq",
-        "reference/changelog"
-      ]
+  "navbar": {
+    "links": [
+      {
+        "label": "Download",
+        "href": "https://download.brunelagent.ai"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get Started",
+      "href": "https://download.brunelagent.ai"
     }
-  ],
-  "footerSocials": {
-    "github": "https://github.com/Brunel-Agent/brunel-agent"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "get-started/quickstart",
+              "get-started/introduction",
+              "get-started/core-concepts"
+            ]
+          },
+          {
+            "group": "Installation",
+            "pages": [
+              "installation/download-install",
+              "installation/account-setup"
+            ]
+          },
+          {
+            "group": "Projects & Sessions",
+            "pages": [
+              "projects-sessions/creating-projects",
+              "projects-sessions/session-types",
+              "projects-sessions/session-lifecycle"
+            ]
+          },
+          {
+            "group": "Planning with AI",
+            "pages": [
+              "planning/chat-interface",
+              "planning/context-files",
+              "planning/mcp-integration"
+            ]
+          },
+          {
+            "group": "Team Features",
+            "pages": [
+              "team/shared-workspaces",
+              "team/invitations",
+              "team/roles-permissions"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "settings/ai-providers",
+              "settings/mcp-servers",
+              "settings/billing"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/keyboard-shortcuts",
+              "reference/faq",
+              "reference/changelog"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/Brunel-Agent/brunel-agent"
+    }
   }
 }
