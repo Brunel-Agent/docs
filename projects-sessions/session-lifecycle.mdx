@@ -45,8 +45,10 @@ You can move a session to any phase at any time — forward or backward. If a ve
 The Dashboard gives your entire team a real-time bird's-eye view of all sessions across a project, grouped by phase. Changes — status updates, new sessions, new messages — are reflected immediately for every member of the organization.
 
 - Sessions are displayed **active-first** — Planning and Execution phases are surfaced at the top
-- Each session card shows its name, type, phase, and last activity
+- Each session card shows its name, type, phase, status, and last activity
 - Click any session card to open it
+
+**Organization Dashboard** — at the organization level (above the project view), new organizations see an **onboarding checklist** guiding through first project creation, member invitations, and settings. The checklist disappears once dismissed.
 
 ---
 
@@ -55,6 +57,29 @@ The Dashboard gives your entire team a real-time bird's-eye view of all sessions
 Every message in every session is stored in the cloud and persists indefinitely. When you reopen a session — even after weeks — the full conversation history is there exactly as you left it.
 
 This persistence is what makes sessions **team artifacts** rather than disposable chats. A senior developer can build a plan in a session, and any teammate can open it later to understand the reasoning, context, and decisions behind the work.
+
+---
+
+## Session Status
+
+In addition to the lifecycle phase, each session has a **status** that reflects its current activity state. Phase and status are independent — a session can be in the Planning phase but marked as blocked.
+
+| Status | Meaning |
+|--------|---------|
+| **Active** | Work is proceeding normally |
+| **On Hold** | Intentionally paused — will resume later |
+| **Blocked** | Cannot proceed due to an external dependency |
+| **Completed** | Work for this phase is done |
+
+To change a session's status, open the session context menu (right-click the session in the sidebar or use the ⋯ menu inside the session). Options include **Put On Hold**, **Mark as Blocked**, and **Mark Complete**. All status changes require a brief reason — this becomes part of the session's history.
+
+---
+
+## Agent hints
+
+When a session reaches certain phase and status combinations — for example, Planning phase and Completed status — a hint bar appears at the bottom of the session suggesting a next step. For a completed planning session, this might be **Run Review Agent** to validate the plan for gaps. For a completed implementation session, it might be **Run Verification Agent**.
+
+Click the suggested action to send the message instantly, or dismiss the bar to ignore it.
 
 ---
 

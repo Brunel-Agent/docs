@@ -1,0 +1,85 @@
+---
+title: "GitHub Integration"
+description: "Connect a GitHub repository to a project so agents can explore code without a local checkout."
+---
+
+Brunel's GitHub integration lets agents read your codebase directly from GitHub — no local clone required. It is configured per project and works alongside the [Code Sources](/planning/code-sources) feature in each session.
+
+---
+
+## How it works
+
+When a project has GitHub configured, sessions can switch their **code source** to GitHub mode. The planning agent will read files from the connected repository and branch rather than from a local folder on your machine.
+
+There are two GitHub modes:
+
+| Mode | How it authenticates | Who configures it |
+|------|---------------------|-------------------|
+| **GitHub (App)** | Brunel GitHub App installation — works for private repos, no personal token needed | Admin or Owner, per project |
+| **GitHub (Personal)** | Your own GitHub OAuth connection | Each user, in **Settings → Integrations** |
+
+---
+
+## Setting up the GitHub App (Admin)
+
+GitHub App is the recommended mode for teams because it authenticates through an installation rather than a personal account.
+
+1. Open the project and go to **Project Settings → GitHub Integration**
+2. Click **Connect GitHub App**
+3. Your system browser will open to the GitHub App installation page — authorize Brunel to access your repositories
+4. After authorization, the browser will redirect back to Brunel automatically
+
+Once connected, the card will show **Connected**.
+
+<Note>
+Only project Admins and Owners can connect or disconnect the GitHub App.
+</Note>
+
+---
+
+## Selecting a repository and default branch
+
+Once the GitHub App is connected:
+
+1. In **Project Settings → GitHub Integration**, select a **Repository** from the dropdown — this is populated from your GitHub App installation
+2. Select a **Default Branch** — the branch the agent will read from by default
+3. Click **Save GitHub Settings**
+
+All sessions in the project will use this repository. Individual sessions can [override the branch per-session](/planning/code-sources#changing-the-branch).
+
+---
+
+## Connecting your personal GitHub account (per user)
+
+GitHub (Personal) mode uses your individual GitHub OAuth connection. This is a per-user setting — each team member connects their own account.
+
+1. Go to **Settings → Integrations**
+2. Under **GitHub**, click **Connect**
+3. Complete the OAuth flow in your browser
+
+Once connected, sessions in any project with a `githubRepo` configured will offer **GitHub (Personal)** as a code source option.
+
+---
+
+## Worktree folder
+
+You can configure a custom folder name for git worktrees created from sessions:
+
+1. In **Project Settings → GitHub Integration**, find the **Worktree Folder** field
+2. Enter a relative path (default: `.worktree`)
+3. Save
+
+This folder is created inside your local project directory when worktrees are created. Add it to your `.gitignore`.
+
+See [Code Sources & Worktrees](/planning/code-sources) for how worktrees are created and used in sessions.
+
+---
+
+## Disconnecting
+
+To disconnect the GitHub App:
+
+1. Go to **Project Settings → GitHub Integration**
+2. Click **Disconnect**
+
+This clears the installation link and removes the repo and branch configuration. Sessions will fall back to Local mode.

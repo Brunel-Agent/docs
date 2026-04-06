@@ -30,14 +30,38 @@ You can also attach files directly in the chat input using the attachment button
 
 ---
 
+## The File Panel
+
+The file panel (right side of the session) has two tabs:
+
+| Tab | Contents |
+|-----|----------|
+| **Planning** | Documents written by the AI agent during the planning session — requirements, technical design, acceptance criteria, etc. This tab is shown by default. |
+| **Context** | Files you uploaded to give the AI background information. |
+
+Both are shown in the same panel for easy access.
+
 ## Browsing and Previewing Files
 
-The file panel shows all context files attached to the session. Click any file to preview it inline. Brunel supports inline viewing for:
+Click any file to preview it inline. Brunel supports inline viewing for:
 
 - **Plain text and Markdown** — rendered directly in the panel
 - **Code files** — syntax-highlighted preview
 - **Word documents** (`.docx`) — inline document viewer
 - **Spreadsheets** (`.xlsx`) — inline spreadsheet viewer
+
+---
+
+## Planning Documents (Agent-Written Files)
+
+As the planning agent works through your session, it writes structured documents to the **Planning** tab — business requirements, technical design, acceptance criteria, and more. These documents are the primary output you hand off to your coding agent.
+
+**To export planning documents:**
+
+- **Download individually** — click any file in the Planning tab to preview it, then use the download icon to save it locally
+- **Download as ZIP** — click the **Archive** icon in the Planning tab header to export all planning documents as a single ZIP file
+
+When planning is complete, a **Planning Complete** banner appears in the chat. If planning documents are ready, you'll see a **Review Docs** button — click it to open the planning documents directly.
 
 ---
 

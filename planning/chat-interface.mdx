@@ -74,3 +74,34 @@ Every message in the chat supports:
 You can attach files directly in the message input using the **attachment button** (paperclip icon). Files uploaded this way are added to the session's Context Files and immediately available to the AI in subsequent messages.
 
 For managing multiple context files, use the dedicated **Context Files panel** — see [Context Files](/planning/context-files).
+
+---
+
+## Planning Complete Banner
+
+When the AI has finished building a plan, a green **Planning Complete** banner appears above the input area. It shows:
+
+- A **confidence score** indicating how complete the plan is
+- A brief **summary** of what the plan covers
+- A **Review Docs** button — opens the planning documents folder on your machine (appears when docs have been written to disk)
+- A **Proceed to Implementation** button — moves the session to the Execution phase
+
+---
+
+## Sending Messages While the Agent is Working
+
+You can type and send a message while the agent is still responding. The message will be **queued** and delivered automatically once the current response completes. A queued message indicator appears above the input area showing how many messages are waiting. Hover over it to preview the queued content.
+
+---
+
+## Sub-Agent Activity
+
+For complex tasks, the planning agent may spawn sub-agents to handle work in parallel — for example, a research sub-agent or a verification sub-agent. When a sub-agent is active, you'll see an indicator in the session. Click it to open the **Sub-Agent Panel** on the right side of the screen, which shows real-time streaming output from the sub-agent, including tool calls and text output.
+
+The panel closes automatically when you switch sessions.
+
+---
+
+## Context Window Usage
+
+At the bottom of the session, a usage indicator shows how much of the agent's context window is currently in use. This is useful for long planning sessions — if the context fills up, the system will compact conversation history automatically to keep the session running smoothly.

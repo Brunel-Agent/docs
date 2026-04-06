@@ -4,6 +4,41 @@ description: "Product updates and release notes for Brunel Agent."
 mode: "wide"
 ---
 
+<Update label="v0.13.0" description="April 2026" tags={["Release"]}>
+
+#### What's New
+
+- **Auto-update modes** — Updates now come in two modes: optional (dismissible banner) and mandatory (full-screen prompt for critical releases). Both modes download in the background and apply on restart.
+
+</Update>
+
+<Update label="v0.12.0" description="March 2026" tags={["Release"]}>
+
+#### What's New
+
+- **Google OAuth** — Sign in and sign up with your Google account. Existing email/password accounts with matching addresses are linked automatically.
+- **Payment method storage** — Save a card on file (via Stripe) to enable credit top-ups and auto-reload.
+- **Auto-reload** — Automatically purchase credits when your balance drops below a configurable threshold. Requires a saved payment method. Owner-only setting.
+- **Monthly spend limit** — Set an optional cap on monthly credit purchases for your organization. Includes an MTD progress bar and a warning at 80% of limit.
+- **Purchased credits** — Credit balance is now split into monthly allowance (resets each cycle) and purchased credits (never expire).
+- **Onboarding checklist** — New organizations see a getting-started checklist on the Dashboard covering project creation, team invitations, and settings. Dismissible once complete.
+
+</Update>
+
+<Update label="v0.10.0" description="March 2026" tags={["Release"]}>
+
+#### What's New
+
+- **GitHub integration** — Connect a GitHub App installation to a project so agents can read the codebase directly from GitHub — no local clone required. Configure the repository and default branch in **Project Settings → GitHub Integration**.
+- **Code sources** — Each session now has a code source picker in the workspace bar: Local (folder on your machine), GitHub App (via project installation), or GitHub Personal (your OAuth-connected account). The source is saved per session.
+- **Per-session branch picker** — In GitHub mode, select any branch from the connected repository directly from the workspace bar. Selection persists across sessions.
+- **Worktree creation** — Click **+ worktree** in the workspace bar to create an isolated git worktree on a new branch for the current session. Available in both Local and GitHub modes. The worktree folder is configurable per project.
+- **Terminal launch** — In Local mode, a terminal icon in the workspace bar opens a terminal at the session's local path.
+- **Session status** — Sessions now have a status (Active, On Hold, Blocked, Completed) independent of their lifecycle phase. Set via the session context menu. Blocked and on-hold states require a reason.
+- **Agent hint bar** — When a session reaches a completed phase (e.g., Planning complete), a contextual prompt appears suggesting a next step — such as running a review or verification agent.
+
+</Update>
+
 <Update label="v0.9.0" description="March 2026" tags={["Release"]}>
 
 #### What's New

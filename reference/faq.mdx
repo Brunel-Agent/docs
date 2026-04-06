@@ -47,4 +47,24 @@ description: "Frequently asked questions about Brunel Agent."
   <Accordion title="What is the difference between archiving and deleting a session?">
     Brunel uses soft-delete — archiving removes a session from your active view but preserves all history. You can recover an archived session at any time. There is no permanent delete for sessions.
   </Accordion>
+
+  <Accordion title="Can the agent read my code without me setting up a local folder?">
+    Yes. If your project has GitHub integration configured (GitHub App or personal OAuth), you can switch a session's code source to GitHub mode. The agent reads files directly from the repository — no local checkout needed. See [Code Sources & Worktrees](/planning/code-sources) for details.
+  </Accordion>
+
+  <Accordion title="What is a worktree and when should I use one?">
+    A worktree is an isolated copy of your repository on a dedicated branch, created automatically for a session. Use worktrees when you want the agent to work on a separate branch without touching your main working copy. Click **+ worktree** in the session workspace bar to create one. See [Code Sources & Worktrees](/planning/code-sources#worktrees) for more.
+  </Accordion>
+
+  <Accordion title="What is the difference between session phase and session status?">
+    Phase (Backlog → Planning → Execution → Verification) represents where in the workflow a task sits. Status (Active, On Hold, Blocked, Completed) represents the current activity state within that phase. A session can be in the Planning phase but marked as Blocked because an external dependency is unresolved.
+  </Accordion>
+
+  <Accordion title="Can I sign in with Google?">
+    Yes. On the login screen, click **Continue with Google** to sign in or create an account using your Google identity. If you already have a Brunel account with the same email, your Google account will be linked automatically.
+  </Accordion>
+
+  <Accordion title="What is auto-reload and how do I set it up?">
+    Auto-reload automatically purchases additional credits when your balance drops below a threshold you configure — so sessions are never interrupted by an empty balance. You need a saved payment method and Owner role to enable it. Go to **Settings → Billing → Auto-Reload** to configure the reload amount and trigger threshold.
+  </Accordion>
 </AccordionGroup>

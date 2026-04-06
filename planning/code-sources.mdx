@@ -1,0 +1,95 @@
+---
+title: "Code Sources & Worktrees"
+description: "Configure how the planning agent reads your codebase — local folder, GitHub App, or personal GitHub account."
+---
+
+Every session has a **code source** that tells the planning agent where to read your codebase from. The code source is configured per session and persists across app restarts.
+
+---
+
+## The Workspace Bar
+
+The workspace bar sits at the bottom of each session's input area. It shows the active code source and lets you switch sources, pick a folder or branch, create worktrees, and launch a terminal.
+
+```
+[ Source ▾ ] → [ folder / repo ] → [ branch ] → [ + worktree ] → [ ↗ terminal ]
+```
+
+---
+
+## Code source options
+
+| Source | Description | When it appears |
+|--------|-------------|-----------------|
+| **Local** | Agent reads from a folder on your machine | When a local path has been configured |
+| **GitHub (App)** | Agent reads from GitHub via the project's GitHub App installation | When the project has a GitHub App connected |
+| **GitHub (Personal)** | Agent reads from GitHub via your personal OAuth connection | When the project has a `githubRepo` set and you've connected your GitHub account |
+
+If only one source is available, the picker is hidden and that source is used automatically.
+
+---
+
+## Local mode
+
+In Local mode the agent reads files directly from your machine.
+
+**Selecting a folder:**
+
+1. Click the folder button in the workspace bar
+2. Click **Choose a different folder** to open a folder picker
+3. Select the root of your codebase
+
+The selected path is saved per session and will be restored the next time you open the session.
+
+**Seeing branch info:**
+
+If the selected folder is a git repository, the current branch name is shown next to the folder. This is read from git — Brunel does not switch branches for you.
+
+---
+
+## GitHub mode
+
+In GitHub mode the agent reads your codebase from GitHub — no local checkout required.
+
+To use GitHub mode, the project must have GitHub configured (see [GitHub Integration](/settings/github-integration)).
+
+**Changing the branch:**
+
+In GitHub mode, a branch picker appears in the workspace bar. Click it to select any branch from the connected repository. Your selection is saved per session.
+
+---
+
+## Switching sources
+
+Click the **Source** button (leftmost in the workspace bar) to open the source picker. Select the source you want to use — the change takes effect immediately and is saved.
+
+---
+
+## Worktrees
+
+A worktree is an isolated copy of your repository on a new branch, created automatically for a session. Use worktrees when you want the agent to have a dedicated branch to work on without affecting your main working copy.
+
+### Creating a worktree
+
+A **+ worktree** button appears in the workspace bar when worktree creation is available:
+
+- **Local mode:** the folder must be a git repository with a known current branch
+- **GitHub mode:** a local base path must be configured in the project, and a branch must be selected
+
+Click **+ worktree** to create one. Brunel will:
+
+1. Create a new branch named `{session-type}-session-{id}` branched off your current branch (Local mode) or selected GitHub branch (GitHub mode)
+2. Create the worktree in the configured worktree folder (default: `.worktree` inside your repo)
+3. Switch the session to Local mode, pointing at the new worktree path
+
+The worktree name and path are shown in the workspace bar. You can copy the full path using the copy icon.
+
+### Worktree folder
+
+The folder where worktrees are created is configurable per project in **Project Settings → GitHub Integration → Worktree Folder**. Default is `.worktree`. Add this folder to your `.gitignore`.
+
+---
+
+## Terminal launch
+
+When the session is in Local mode and a folder is set, a terminal icon appears on the right side of the workspace bar. Click it to open a terminal at the session's local path — useful for running the agent's output after planning completes.

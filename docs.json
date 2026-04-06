@@ -58,6 +58,7 @@
             "pages": [
               "planning/chat-interface",
               "planning/context-files",
+              "planning/code-sources",
               "planning/mcp-integration"
             ]
           },
@@ -73,6 +74,7 @@
             "group": "Settings",
             "pages": [
               "settings/ai-providers",
+              "settings/github-integration",
               "settings/mcp-servers",
               "settings/billing"
             ]
